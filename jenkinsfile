@@ -3,12 +3,15 @@
         label 'Agent1'
     } 
     stages {
-        stage("step1"){
+        stage("Deploy"){
 
             steps{
                 sh '''
 
                 #echo "this the first stage 1"
+                dnf module disable nodejs -y
+                dnf module enable nodejs:20 -y
+                dnf install nodejs -y
                 ls -ltr
 
                 '''
