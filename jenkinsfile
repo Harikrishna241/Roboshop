@@ -48,7 +48,7 @@
             steps{
 
                     sh """
-                    echo "packagrJsonversion: $appversion"
+                    echo "packagrJsonversion: 
 
                     """
             }
