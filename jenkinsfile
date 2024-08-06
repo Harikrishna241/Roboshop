@@ -3,6 +3,7 @@
         label 'Agent1'
     } 
     environment{
+
         def appversion = ''
 
     }
@@ -37,6 +38,7 @@
                                 
                     def packageJSON = readJSON file: 'package.json'
                     def appversion = packageJSON.version
+                    echo "packagrJsonversion: $appversion"
                     
                 }
             }
@@ -45,7 +47,10 @@
 
             steps{
 
+                    sh """
                     echo "packagrJsonversion: $appversion"
+
+                    """
             }
             
         }
