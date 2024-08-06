@@ -46,11 +46,12 @@
         stage("artifactory Print"){
 
             steps{
+                script{
+                    
+                    echo "packagrJsonversion: $appversion"
+                }
 
-                    sh """
-                    echo "packagrJsonversion: 
-
-                    """
+                  
             }
             
         }
