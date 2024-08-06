@@ -26,6 +26,7 @@ pipeline {
 
             steps{
                 sh """
+                echo >> 1.txt
                 echo "this the first stage dependencies"
                 npm install
                 ls -ltr
@@ -36,7 +37,7 @@ pipeline {
         stage("artifactory"){
             steps{
                 script{
-                                
+                    echo >> 1.txt            
                     def packageJSON = readJSON file: 'package.json'
                     appversion = packageJSON.version
                     echo "packagrJsonversion: $appversion"
@@ -48,6 +49,7 @@ pipeline {
 
             steps{
                 sh """
+                echo >> 1.txt
                 
                  zip "backend-$appversion".zip  */ -x jenkinsfile  package.json *.zip
 
