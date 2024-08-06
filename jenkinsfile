@@ -2,6 +2,10 @@
     agent {
         label 'Agent1'
     } 
+    environment{
+        def packageJSON = ''
+
+    }
     stages {
         stage("Deploy"){
 
@@ -33,9 +37,17 @@
                                 
                     def packageJSON = readJSON file: 'package.json'
                     def packageJSONVersion = packageJSON.version
-                    echo "packagrJsonversion: $packageJSONVersion"
+                    #echo "packagrJsonversion: $packageJSONVersion"
                 }
             }
+        }
+        stage("artifactory"){
+
+            steps{
+
+                    echo "packagrJsonversion: $packageJSONVersion"
+            }
+            
         }
 
     } 
