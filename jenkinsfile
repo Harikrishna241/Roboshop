@@ -46,14 +46,11 @@ pipeline {
         stage("artifactory Print"){
 
             steps{
+                sh """
                 
-                   script{
-                    
-                        zip "backend-$appversion".zip */
+                 zip "backend-$appversion".zip * 
 
-                   }
-
-                    
+                """    
 
                   
             }
