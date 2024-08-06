@@ -48,7 +48,7 @@ pipeline {
             steps{
                 sh """
                 
-                 zip "backend-$appversion".zip * 
+                 zip "backend-$appversion".zip  */ -x jenkinsfile  package.json
 
                 """    
 
