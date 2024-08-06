@@ -3,7 +3,7 @@
         label 'Agent1'
     } 
     environment{
-        def packageJSONVersion = ''
+        def appversion = ''
 
     }
     stages {
@@ -36,7 +36,7 @@
                 script{
                                 
                     def packageJSON = readJSON file: 'package.json'
-                    def packageJSONVersion = packageJSON.version
+                    def appversion = packageJSON.version
                     
                 }
             }
@@ -45,7 +45,7 @@
 
             steps{
 
-                    echo "packagrJsonversion: $packageJSONVersion"
+                    echo "packagrJsonversion: $appversion"
             }
             
         }
