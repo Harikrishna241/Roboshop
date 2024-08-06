@@ -47,8 +47,9 @@
 
             steps{
                 script{
-                    
+                    sh """
                     echo "packagrJsonversion: $appversion"
+                    """
                 }
 
                   
