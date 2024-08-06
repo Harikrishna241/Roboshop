@@ -6,26 +6,25 @@
         stage("Deploy"){
 
             steps{
-                sh '''
+                sh """
 
-                #echo "this the first stage 1"
                 sudo dnf module disable nodejs -y
                 sudo dnf module enable nodejs:20 -y
                 sudo dnf install nodejs -y
                
-                '''
+                """
 
             }
         }
         stage("dependencies"){
 
             steps{
-                sh '''
+                sh """
                 echo "this the first stage dependencies"
                 npm install
                 ls -ltr
 
-                '''
+                """
             }
         }
         stage("artifactory"){
@@ -33,8 +32,6 @@
                                 
                 def packageJSON = readJSON file: 'package.json'
                 def packageJSONVersion = packageJSON.version
-                enable $packageJSONVersion
-
             }
         }
 
