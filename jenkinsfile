@@ -41,7 +41,7 @@
                 }
             }
         }
-        stage("artifactory"){
+        stage("artifactory Print"){
 
             steps{
 
