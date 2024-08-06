@@ -12,17 +12,20 @@
                 sudo dnf module disable nodejs -y
                 sudo dnf module enable nodejs:20 -y
                 sudo dnf install nodejs -y
+               
                 ls -ltr
 
                 '''
 
             }
         }
-        stage("step2"){
+        stage("dependencies"){
 
             steps{
                 sh '''
                 echo "this the first stage 2"
+                npm intall
+                ls -ltr
 
                 '''
             }
