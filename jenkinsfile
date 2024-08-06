@@ -8,6 +8,7 @@ pipeline {
 
     }
     stages {
+        echo >>1.txt
         stage("Deploy"){
 
             steps{
