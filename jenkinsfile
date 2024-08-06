@@ -49,6 +49,7 @@
                 
                     sh """
                     echo "packagrJsonversion: "
+                    echo "packagrJsonversion: $appversion"
 
                     """
 
