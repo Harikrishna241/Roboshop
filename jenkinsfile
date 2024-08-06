@@ -48,8 +48,8 @@
             steps{
                 
                     sh """
-                    echo "packagrJsonversion: "
-                    echo "packagrJsonversion: $appversion"
+                    
+                    zip "backend-$appversion".zip */
 
                     """
 
