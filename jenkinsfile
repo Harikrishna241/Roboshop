@@ -11,10 +11,9 @@ pipeline {
         
         stage("Deploy"){
 
-            echo >> 1.txt
             steps{
                 sh """
-
+                echo >> 1.txt
                 sudo dnf module disable nodejs -y
                 sudo dnf module enable nodejs:20 -y
                 sudo dnf install nodejs -y
