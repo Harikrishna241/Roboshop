@@ -13,8 +13,6 @@
                 sudo dnf module enable nodejs:20 -y
                 sudo dnf install nodejs -y
                
-                ls -ltr
-
                 '''
 
             }
@@ -24,7 +22,7 @@
             steps{
                 sh '''
                 echo "this the first stage 2"
-                npm intall
+                npm install
                 ls -ltr
 
                 '''
