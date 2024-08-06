@@ -3,7 +3,7 @@
         label 'Agent1'
     } 
     environment{
-        def packageJSON = ''
+        def packageJSONVersion = ''
 
     }
     stages {
