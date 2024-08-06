@@ -37,7 +37,7 @@
                 script{
                                 
                     def packageJSON = readJSON file: 'package.json'
-                    def appversion = packageJSON.version
+                    appversion = packageJSON.version
                     echo "packagrJsonversion: $appversion"
                     
                 }
@@ -49,7 +49,7 @@
                 
                     sh """
                     echo "packagrJsonversion: "
-                    
+
                     """
 
                   
