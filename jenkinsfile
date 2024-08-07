@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label Agent1
+    }
     environment{
 
         def appversion = ''
@@ -18,15 +20,6 @@ pipeline {
 
             }
         }
-        stage("dependencies"){
-
-            steps{
-                sh """
-                echo "this the second stage dependencies"
-
-                """
-            }
-        }
         stage("artifactory"){
             steps{
                 script{
@@ -36,6 +29,16 @@ pipeline {
                     echo "packagrJsonversion: $appversion"
                     
                 }
+            }
+        }
+        stage("dependencies"){
+
+            steps{
+               sh """
+                npm install
+                ls -ltr
+                echo "application version: $appVersion"
+               """
             }
         }
         stage("artifactory Print"){
