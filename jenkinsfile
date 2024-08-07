@@ -60,7 +60,7 @@ pipeline {
                         protocol: 'http',
                         nexusUrl: 'http://184.73.6.64:8081/repository/backend/',
                         groupId: 'com.expense',
-                        version: version,
+                        version: "${appversion}",
                         repository: 'backend',
                         credentialsId: 'CredentialsId',
                         artifacts: [
