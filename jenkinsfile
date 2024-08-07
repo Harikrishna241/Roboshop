@@ -23,10 +23,10 @@ pipeline {
         stage("dependencies"){
 
             steps{
-               sh """
+               script{
                     
                     echo "application version: $appVersion"
-                """
+                }
             }
         }
         stage("artifactory Print"){
