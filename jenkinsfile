@@ -20,15 +20,7 @@ pipeline {
                 }
             }
         }
-        stage("dependencies"){
 
-            steps{
-               script{
-                    
-                    echo "application version: $appVersion"
-                }
-            }
-        }
         stage("artifactory Print"){
 
             steps{
