@@ -15,7 +15,7 @@ pipeline {
                                 
                     def packageJSON = readJSON file: 'package.json'
                     appversion = packageJSON.version
-                    echo "packagrJsonversion: $appversion"
+                    echo "packageJsonversion: $appversion"
                     
                 }
             }
@@ -23,11 +23,11 @@ pipeline {
         stage("dependencies"){
 
             steps{
-               sh """
+               script{
                 npm install
                 ls -ltr
                 echo "application version: $appVersion"
-               """
+               }
             }
         }
         stage("artifactory Print"){
