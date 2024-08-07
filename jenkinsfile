@@ -20,7 +20,7 @@ pipeline {
                 }
             }
         }
-            stages{
+        
     
         stage("installation"){
             steps{
@@ -67,6 +67,6 @@ pipeline {
                 }
             }
         }
-
     }
+
 }
