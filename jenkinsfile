@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label Agent1
-    }
+    agent any
     environment{
 
         def appversion = ''
@@ -52,6 +50,28 @@ pipeline {
                   
             }
             
+        }
+        stage("artifactory push"){
+
+            steps{
+                script{
+                    nexusArtifactUploader(
+                        nexusVersion: 'nexus3',
+                        protocol: 'http',
+                        nexusUrl: 'http://184.73.6.64:8081/repository/backend/',
+                        groupId: 'com.expense',
+                        version: version,
+                        repository: 'backend',
+                        credentialsId: 'CredentialsId',
+                        artifacts: [
+                            [artifactId: projectName,
+                            classifier: 'nexus-credential',
+                            file: "backend-" + "${appversion}" + ".zip",
+                            type: 'zip']
+                        ]
+                    )
+                }
+            }
         }
 
     }
