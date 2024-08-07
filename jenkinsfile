@@ -25,7 +25,8 @@ pipeline {
         stage("installation"){
             steps{
                 sh """
-                    sudo dnf moule disable nodejs -y          
+                    echo "this is instllation stage"
+                    ls -la          
 
                     
                 """
