@@ -24,7 +24,7 @@ pipeline {
 
             steps{
                sh """
-                    ls -ltr
+                    
                     echo "application version: $appVersion"
                 """
             }
