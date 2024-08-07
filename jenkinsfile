@@ -62,10 +62,10 @@ pipeline {
                         groupId: 'com.expense',
                         version: "${appversion}",
                         repository: 'backend',
-                        credentialsId: 'CredentialsId',
+                        credentialsId: 'nexus-credential',
                         artifacts: [
                             [artifactId: 'backend',
-                            classifier: 'nexus-credential',
+                            classifier: '',
                             file: "backend-" + "${appversion}" + ".zip",
                             type: 'zip']
                         ]
