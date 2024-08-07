@@ -12,9 +12,7 @@ pipeline {
             steps{
                 sh """
 
-                sudo dnf module disable nodejs -y
-                sudo dnf module enable nodejs:20 -y
-                sudo dnf install nodejs -y
+                echo "this the first stage dependencies"
                
                 """
 
@@ -24,7 +22,7 @@ pipeline {
 
             steps{
                 sh """
-                echo "this the first stage dependencies"
+                echo "this the second stage dependencies"
                 npm install
                 ls -ltr
 
