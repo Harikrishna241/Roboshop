@@ -25,7 +25,7 @@ pipeline {
         stage("installation"){
             steps{
                 sh """
-                    echo "this is instllation stage"
+                    npm install
                     ls -la          
 
                     
