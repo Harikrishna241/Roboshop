@@ -20,6 +20,17 @@ pipeline {
                 }
             }
         }
+            stages{
+    
+        stage("installation"){
+            steps{
+                sh """
+                    sudo dnf moule disable nodejs -y          
+
+                    
+                """
+            }
+        }
 
         stage("artifactory Print"){
 
